@@ -28,9 +28,11 @@ namespace Crud.NET.Repository
             return await _context.User.ToListAsync();
         }
 
-        public Task<User> SearchUserById(int id)
+        public async Task<User> SearchUserById(int id)
         {
-            throw new NotImplementedException();
+            return await _context.User
+                .Where(x => x.Id == id)
+                .FirstOrDefaultAsync();
         }
 
         public void UpdateUser(User user)

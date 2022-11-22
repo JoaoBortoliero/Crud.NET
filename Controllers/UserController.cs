@@ -24,13 +24,22 @@ namespace Crud.NET.Controllers
                 : NoContent();
         }
 
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(int id)
+        {
+            var users = await _repository.SearchUserById(id);
+            return users != null
+                ? Ok(users)
+                : NotFound("User not found");
+        }
+
         [HttpPost]
         public async Task<IActionResult> Post(User user)
         {
             _repository.CreateUser(user);
             return await _repository.SaveChangesAsync()
-                ? Ok("Usuário cadastrado com sucesso!")
-                : BadRequest("Erro ao cadastrar usuário!");
+                ? Ok("Successfully registered user!")
+                : BadRequest("Error registering user!");
         }
     }
 
