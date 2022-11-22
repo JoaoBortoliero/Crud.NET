@@ -3,13 +3,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Crud.NET.Data
 {
-    public class UsuarioContext : DbContext
+    public class UserContext : DbContext
     {
-        public UsuarioContext(DbContextOptions<UsuarioContext> options) : base(options)
+        public UserContext(DbContextOptions<UserContext> options) : base(options)
         {
         }
 
-        public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<Usuario> User { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

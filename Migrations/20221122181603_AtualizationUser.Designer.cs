@@ -11,7 +11,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace Crud.NET.Migrations
 {
-    [DbContext(typeof(UsuarioContext))]
+    [DbContext(typeof(UserContext))]
     [Migration("20221122181603_AtualizationUser")]
     partial class AtualizationUser
     {
@@ -25,7 +25,7 @@ namespace Crud.NET.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("Crud.NET.Model.Usuario", b =>
+            modelBuilder.Entity("Crud.NET.Model.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()

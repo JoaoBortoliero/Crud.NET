@@ -6,12 +6,12 @@ namespace Crud.NET.Controllers
     [ApiController]
     [Route("api/[controller]")]
 
-    public class UsuarioController : ControllerBase
+    public class UserController : ControllerBase
     {
-        private static List<Usuario> Usuarios() 
+        private static new List<User> User() 
         {
-            return new List<Usuario> {
-                new Usuario {
+            return new List<User> {
+                new User {
                     Nome = "João", 
                     Id = 1,
                     DataNascimento = new DateTime(1999, 09, 11)}
@@ -20,15 +20,17 @@ namespace Crud.NET.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok(Usuarios());
+            return Ok(User());
         }
 
         [HttpPost]
-        public IActionResult Post(Usuario usuario)
+        public IActionResult Post(User user)
         {
-            var usuarios = Usuarios();
-            usuarios.Add(usuario);
-            return Ok(usuarios);
+            var users = User();
+            users.Add(user);
+            return Ok(user);
         }
     }
+
+    
 }
