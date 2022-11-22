@@ -46,18 +46,32 @@ namespace Crud.NET.Controllers
         public async Task<IActionResult> Put(int id, User user)
         {
             var userExists = await _repository.SearchUserById(id);
-            if (user == null)
+            if (userExists == null)
                 return NotFound("User not found");
 
             userExists.Name = user.Name ?? userExists.Name;
             userExists.BirthDate = user.BirthDate != new DateTime()
-                ? user.BirthDate 
+                ? user.BirthDate
                 : userExists.BirthDate;
             _repository.UpdateUser(userExists);
-            
+
             return await _repository.SaveChangesAsync()
                 ? Ok("Successfully updated user!")
                 : BadRequest("Error updating user!");
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var userExists = await _repository.SearchUserById(id);
+            if (userExists == null)
+                return NotFound("User not found");
+
+            _repository.DeleteUser(userExists);
+
+            return await _repository.SaveChangesAsync()
+                ? Ok("Successfully deleted user!")
+                : BadRequest("Error deleting user!");
         }
     }
 }
