@@ -37,7 +37,7 @@ namespace Crud.NET.Repository
 
         public void UpdateUser(User user)
         {
-            throw new NotImplementedException();
+            _context.Update(user);
         }
 
         public async Task<bool> SaveChangesAsync()

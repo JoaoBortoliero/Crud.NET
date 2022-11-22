@@ -41,7 +41,23 @@ namespace Crud.NET.Controllers
                 ? Ok("Successfully registered user!")
                 : BadRequest("Error registering user!");
         }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Put(int id, User user)
+        {
+            var userExists = await _repository.SearchUserById(id);
+            if (user == null)
+                return NotFound("User not found");
+
+            userExists.Name = user.Name ?? userExists.Name;
+            userExists.BirthDate = user.BirthDate != new DateTime()
+                ? user.BirthDate 
+                : userExists.BirthDate;
+            _repository.UpdateUser(userExists);
+            
+            return await _repository.SaveChangesAsync()
+                ? Ok("Successfully updated user!")
+                : BadRequest("Error updating user!");
+        }
     }
-
-
 }

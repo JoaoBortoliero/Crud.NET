@@ -33,16 +33,16 @@ namespace Crud.NET.Migrations
 
                     b.Property<DateTime>("DataNascimento")
                         .HasColumnType("timestamp with time zone")
-                        .HasColumnName("data_nascimento");
+                        .HasColumnName("birth_date");
 
                     b.Property<string>("Nome")
                         .IsRequired()
                         .HasColumnType("text")
-                        .HasColumnName("nome");
+                        .HasColumnName("name");
 
                     b.HasKey("Id");
 
-                    b.ToTable("usuario", (string)null);
+                    b.ToTable("user", (string)null);
                 });
 #pragma warning restore 612, 618
         }
