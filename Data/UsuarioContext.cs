@@ -15,7 +15,10 @@ namespace Crud.NET.Data
         {
             var usuario = modelBuilder.Entity<Usuario>();
             usuario.ToTable("usuario");
+            usuario.HasKey(x => x.Id);
             usuario.Property(x => x.Id).HasColumnName("id").ValueGeneratedOnAdd();
+            usuario.Property(x => x.Nome).HasColumnName("nome").IsRequired();
+            usuario.Property(x => x.DataNascimento).HasColumnName("data_nascimento");
         }
     }
 }
