@@ -1,5 +1,6 @@
 using Crud.NET.Data;
 using Crud.NET.Model;
+using Microsoft.EntityFrameworkCore;
 
 namespace Crud.NET.Repository
 {
@@ -22,9 +23,9 @@ namespace Crud.NET.Repository
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<User>> SearchUser()
+        public async Task<IEnumerable<User>> SearchUser()
         {
-            throw new NotImplementedException();
+            return await _context.User.ToListAsync();
         }
 
         public Task<User> SearchUserById(int id)

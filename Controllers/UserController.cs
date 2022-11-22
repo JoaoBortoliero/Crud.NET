@@ -16,9 +16,12 @@ namespace Crud.NET.Controllers
         }
 
         [HttpGet]
-        public IActionResult Get()
+        public async Task<IActionResult> Get()
         {
-            return Ok();
+            var users = await _repository.SearchUser();
+            return users.Any()
+                ? Ok(users)
+                : NoContent();
         }
 
         [HttpPost]
