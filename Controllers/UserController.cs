@@ -1,4 +1,5 @@
 using Crud.NET.Model;
+using Crud.NET.Repository;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Crud.NET.Controllers
@@ -8,29 +9,27 @@ namespace Crud.NET.Controllers
 
     public class UserController : ControllerBase
     {
-        private static new List<User> User() 
+        private readonly IUserRepository _repository;
+        public UserController(IUserRepository repository)
         {
-            return new List<User> {
-                new User {
-                    Nome = "João", 
-                    Id = 1,
-                    DataNascimento = new DateTime(1999, 09, 11)}
-            };
-        }  
+            _repository = repository;
+        }
+
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok(User());
+            return Ok();
         }
 
         [HttpPost]
-        public IActionResult Post(User user)
+        public async Task<IActionResult> Post(User user)
         {
-            var users = User();
-            users.Add(user);
-            return Ok(user);
+            _repository.CreateUser(user);
+            return await _repository.SaveChangesAsync()
+                ? Ok("Usuário cadastrado com sucesso!")
+                : BadRequest("Erro ao cadastrar usuário!");
         }
     }
 
-    
+
 }

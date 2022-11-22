@@ -11,7 +11,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace Crud.NET.Migrations
 {
-    [DbContext(typeof(UsuarioContext))]
+    [DbContext(typeof(UserContext))]
     [Migration("20221122175950_InitalCreate")]
     partial class InitalCreate
     {

@@ -10,7 +10,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace Crud.NET.Migrations
 {
-    [DbContext(typeof(UsuarioContext))]
+    [DbContext(typeof(UserContext))]
     partial class UsuarioContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

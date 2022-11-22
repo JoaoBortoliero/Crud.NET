@@ -9,11 +9,11 @@ namespace Crud.NET.Data
         {
         }
 
-        public DbSet<Usuario> User { get; set; }
+        public DbSet<User> User { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            var usuario = modelBuilder.Entity<Usuario>();
+            var usuario = modelBuilder.Entity<User>();
             usuario.ToTable("usuario");
             usuario.HasKey(x => x.Id);
             usuario.Property(x => x.Id).HasColumnName("id").ValueGeneratedOnAdd();
