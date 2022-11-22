@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\borto\\Desktop\\GitHub\\Crud.NET\\Crud.NET.csproj": {}
+    "C:\\Users\\borto\\Desktop\\GitHub\\Crud.NET\\Crud.NET.csproj": {}
   },
   "projects": {
-    "c:\\Users\\borto\\Desktop\\GitHub\\Crud.NET\\Crud.NET.csproj": {
+    "C:\\Users\\borto\\Desktop\\GitHub\\Crud.NET\\Crud.NET.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\borto\\Desktop\\GitHub\\Crud.NET\\Crud.NET.csproj",
+        "projectUniqueName": "C:\\Users\\borto\\Desktop\\GitHub\\Crud.NET\\Crud.NET.csproj",
         "projectName": "Crud.NET",
-        "projectPath": "c:\\Users\\borto\\Desktop\\GitHub\\Crud.NET\\Crud.NET.csproj",
+        "projectPath": "C:\\Users\\borto\\Desktop\\GitHub\\Crud.NET\\Crud.NET.csproj",
         "packagesPath": "C:\\Users\\borto\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\borto\\Desktop\\GitHub\\Crud.NET\\obj\\",
+        "outputPath": "C:\\Users\\borto\\Desktop\\GitHub\\Crud.NET\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\borto\\AppData\\Roaming\\NuGet\\NuGet.Config"

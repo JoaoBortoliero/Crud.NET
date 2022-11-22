@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "X8NmBzbOaSbYIzhT4PGVUlVbWlG+XnnIP7EkxTdvLzdVAbkJ5EV1fyQ0Fa/2EYaj8Do88cx6lSGexB13qGe4og==",
+  "dgSpecHash": "0u3WEkOi+7z00k0AcRLiPbHCvpiqW4zcNwbRDYWwl/6UHnIFicaiR/pQDqQophhrUFB2c2oMjtgS8oLHnbqDgw==",
   "success": true,
-  "projectFilePath": "c:\\Users\\borto\\Desktop\\GitHub\\Crud.NET\\Crud.NET.csproj",
+  "projectFilePath": "C:\\Users\\borto\\Desktop\\GitHub\\Crud.NET\\Crud.NET.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\borto\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\borto\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.0\\microsoft.entityframeworkcore.7.0.0.nupkg.sha512",
